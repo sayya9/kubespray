@@ -27,7 +27,7 @@ kube-node
 kube-master 
 ```
 
-# inventory/mycluster/group_vars/all.yml
+### inventory/mycluster/group_vars/all.yml
 
 Allow kubelet to load kernel modules.
 
