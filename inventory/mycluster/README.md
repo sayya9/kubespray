@@ -65,5 +65,11 @@ ansible-playbook -i inventory/mycluster/hosts.ini -u andrew -b -e kube_version=v
 **Graceful upgrade**
 
 ```
-ansible-playbook upgrade-cluster.yml -b -i inventory/sample/hosts.ini -e kube_version=v1.6.0
+ansible-playbook -i inventory/mycluster/hosts.ini -u andrew -b -e kube_version=v1.9.6 upgrade-cluster.yml
+```
+
+**Reset cluster**
+
+```
+ansible-playbook -i inventory/mycluster/hosts.ini -u andrew -b reset.yml
 ```
