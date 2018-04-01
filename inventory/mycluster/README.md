@@ -58,7 +58,7 @@ ansible-playbook -i inventory/mycluster/hosts.ini -u andrew -b cluster.yml
 **Upgrade**
 
 ```
-ansible-playbook -i inventory/mycluster/hosts.ini -u andrew -b -e kube_version=v1.9.6 cluster.yml
+ansible-playbook -i inventory/mycluster/hosts.ini -u andrew -b -e kube_version=v1.9.6 --skip-tags=download cluster.yml
 
 ```
 
@@ -71,5 +71,5 @@ ansible-playbook -i inventory/mycluster/hosts.ini -u andrew -b -e kube_version=v
 **Reset cluster**
 
 ```
-ansible-playbook -i inventory/mycluster/hosts.ini -u andrew -b --skip-tags=download reset.yml
+ansible-playbook -i inventory/mycluster/hosts.ini -u andrew -b reset.yml
 ```
