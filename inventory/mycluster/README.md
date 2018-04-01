@@ -71,5 +71,5 @@ ansible-playbook -i inventory/mycluster/hosts.ini -u andrew -b -e kube_version=v
 **Reset cluster**
 
 ```
-ansible-playbook -i inventory/mycluster/hosts.ini -u andrew -b reset.yml
+ansible-playbook -i inventory/mycluster/hosts.ini -u andrew -b --skip-tags=download reset.yml
 ```
