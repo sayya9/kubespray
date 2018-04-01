@@ -49,15 +49,21 @@ Change this to use another Kubernetes version
 kube_version: v1.9.5
 ```
 
-Install
+**Install**
 
 ```
 ansible-playbook -i inventory/mycluster/hosts.ini -u andrew -b cluster.yml
 ```
 
-Upgrade
+**Upgrade**
 
 ```
 ansible-playbook -i inventory/mycluster/hosts.ini -u andrew -b -e kube_version=v1.9.6 cluster.yml
 
+```
+
+**Graceful upgrade**
+
+```
+ansible-playbook upgrade-cluster.yml -b -i inventory/sample/hosts.ini -e kube_version=v1.6.0
 ```
