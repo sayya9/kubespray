@@ -49,6 +49,12 @@ Change this to use another Kubernetes version
 kube_version: v1.9.5
 ```
 
+Disable insecure port
+
+```
+kube_apiserver_insecure_port: 0
+```
+
 **Install**
 
 ```
