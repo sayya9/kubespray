@@ -74,6 +74,12 @@ kube_apiserver_insecure_port: 0
 ansible-playbook -i inventory/mycluster/hosts.ini -u andrew -b cluster.yml
 ```
 
+**Scale**
+
+```
+ansible-playbook -i inventory/mycluster/hosts.ini -u andrew -b scale.yml
+```
+
 **Upgrade**
 
 ```
