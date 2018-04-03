@@ -1,5 +1,18 @@
 # How to use in our environment?
 
+### Prepare
+
+**Install python-netaddr**
+
+```
+git clone https://github.com/drkjam/netaddr.git
+cd netaddr
+python setup.py install
+python3 setup.py install
+pip install --upgrade Jinja2
+pip3 install --upgrade Jinja2
+```
+
 ### Clone this repo
 
 ```
