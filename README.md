@@ -5,7 +5,7 @@ Deploy a Production Ready Kubernetes Cluster
 
 If you have questions, join us on the [kubernetes slack](https://kubernetes.slack.com), channel **\#kubespray**.
 
--   Can be deployed on **AWS, GCE, Azure, OpenStack or Baremetal**
+-   Can be deployed on **AWS, GCE, Azure, OpenStack, vSphere or Baremetal**
 -   **High available** cluster
 -   **Composable** (Choice of the network plugin for instance)
 -   Support most popular **Linux distributions**
@@ -66,7 +66,7 @@ Supported Linux Distributions
 -----------------------------
 
 -   **Container Linux by CoreOS**
--   **Debian** Jessie
+-   **Debian** Jessie, Stretch, Wheezy
 -   **Ubuntu** 16.04
 -   **CentOS/RHEL** 7
 -   **Fedora/CentOS** Atomic
@@ -105,6 +105,9 @@ Requirements
 -   **Your ssh key must be copied** to all the servers part of your inventory.
 -   The **firewalls are not managed**, you'll need to implement your own rules the way you used to.
     in order to avoid any issue during deployment you should disable your firewall.
+-   If kubespray is ran from non-root user account, correct privilege escalation method
+    should be configured in the target servers. Then the `ansible_become` flag
+    or command parameters `--become or -b` should be specified.
 
 Network Plugins
 ---------------
