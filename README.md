@@ -1,4 +1,4 @@
-![Kubernetes Logo](https://s28.postimg.org/lf3q4ocpp/k8s.png)
+![Kubernetes Logo](https://raw.githubusercontent.com/kubernetes-incubator/kubespray/master/docs/img/kubernetes-logo.png)
 
 Deploy a Production Ready Kubernetes Cluster
 ============================================
@@ -52,6 +52,7 @@ Documents
 -   [Vagrant install](docs/vagrant.md)
 -   [CoreOS bootstrap](docs/coreos.md)
 -   [Debian Jessie setup](docs/debian.md)
+-   [openSUSE setup](docs/opensuse.md)
 -   [Downloaded artifacts](docs/downloads.md)
 -   [Cloud providers](docs/cloud.md)
 -   [OpenStack](docs/openstack.md)
@@ -70,6 +71,7 @@ Supported Linux Distributions
 -   **Ubuntu** 16.04
 -   **CentOS/RHEL** 7
 -   **Fedora/CentOS** Atomic
+-   **openSUSE** Leap 42.3/Tumbleweed
 
 Note: Upstart/SysV init based OS types are not supported.
 
@@ -83,7 +85,7 @@ Versions of supported components
 -   [canal](https://github.com/projectcalico/canal) (given calico/flannel versions)
 -   [cilium](https://github.com/cilium/cilium) v1.0.0-rc8
 -   [contiv](https://github.com/contiv/install/releases) v1.1.7
--   [weave](http://weave.works/) v2.2.1
+-   [weave](http://weave.works/) v2.3.0
 -   [docker](https://www.docker.com/) v17.03 (see note)
 -   [rkt](https://coreos.com/rkt/docs/latest/) v1.21.0 (see Note 2)
 
