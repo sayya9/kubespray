@@ -70,14 +70,55 @@ kube_apiserver_insecure_port: 0
 
 **External install**
 
+You must run external install for customer server. The purpose of the installation is to download k8s images at first time.
+
 ```
-ansible-playbook -i inventory/mycluster/hosts.ini -u andrew -b cluster.yml
+ansible-playbook -i inventory/mycluster/hosts.ini -b cluster.yml
 ```
 
 **Local/Internal install**
 
+copy kubespray to remote customer server
+
 ```
-ansible-playbook -i inventory/local/hosts.ini -e kube_version=v1.10.1 --skip-tags=download cluster.yml
+scp -r . remote_server:~/kubespray
+```
+
+Change your hostname
+
+```
+ssh remote_server
+vim ~/kubespray/inventory/mylocal/hosts.ini
+```
+
+```
+tp-lab02 ansible_connection=local local_release_dir={{ansible_env.HOME}}/releases
+
+[kube-master]
+tp-lab02
+
+[etcd]
+tp-lab02
+
+[kube-node]
+tp-lab02
+
+[k8s-cluster:children]
+kube-node
+kube-master
+```
+
+Reset Kubernetes
+
+```
+cd kubespray
+ansible-playbook -i inventory/mylocal/hosts.ini -b reset.yml
+```
+
+Re-install Kubernetes
+
+```
+ansible-playbook -i inventory/mylocal/hosts.ini -e kube_version=v1.10.1 -b --skip-tags=download,bootstrap-os cluster.yml
 ```
 
 **Scale**
