@@ -68,10 +68,16 @@ Disable insecure port
 kube_apiserver_insecure_port: 0
 ```
 
-**Install**
+**External install**
 
 ```
 ansible-playbook -i inventory/mycluster/hosts.ini -u andrew -b cluster.yml
+```
+
+**Local/Internal install**
+
+```
+ansible-playbook -i inventory/local/hosts.ini -e kube_version=v1.10.1 --skip-tags=download cluster.yml
 ```
 
 **Scale**
