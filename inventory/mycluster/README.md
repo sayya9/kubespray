@@ -7,8 +7,8 @@ git clone https://github.com/drkjam/netaddr.git
 cd netaddr
 python setup.py install
 python3 setup.py install
-pip install --upgrade Jinja2
-pip3 install --upgrade Jinja2
+pip install -U Jinja2
+pip3 install -U Jinja2
 ```
 
 ### Clone this repo
@@ -122,23 +122,23 @@ ansible-playbook -i inventory/mylocal/hosts.ini -e kube_version=v1.10.1 -b --ski
 **Scale**
 
 ```
-ansible-playbook -i inventory/mycluster/hosts.ini -u andrew -b scale.yml
+ansible-playbook -i inventory/mycluster/hosts.ini -b scale.yml
 ```
 
 **Upgrade**
 
 ```
-ansible-playbook -i inventory/mycluster/hosts.ini -u andrew -b -e kube_version=v1.9.6 --skip-tags=download cluster.yml
+ansible-playbook -i inventory/mycluster/hosts.ini -b -e kube_version=v1.9.6 --skip-tags=download cluster.yml
 ```
 
 **Graceful upgrade**
 
 ```
-ansible-playbook -i inventory/mycluster/hosts.ini -u andrew -b -e kube_version=v1.9.6 --skip-tags=download upgrade-cluster.yml
+ansible-playbook -i inventory/mycluster/hosts.ini -b -e kube_version=v1.9.6 --skip-tags=download upgrade-cluster.yml
 ```
 
 **Reset cluster**
 
 ```
-ansible-playbook -i inventory/mycluster/hosts.ini -u andrew -b reset.yml
+ansible-playbook -i inventory/mycluster/hosts.ini -b reset.yml
 ```
