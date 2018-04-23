@@ -116,6 +116,7 @@ ansible-playbook -i inventory/mylocal/hosts.ini -b reset.yml
 Re-install Kubernetes
 
 ```
+sudo mkdir -p /usr/local/bin/kubernetes-scripts
 ansible-playbook -i inventory/mylocal/hosts.ini -e kube_version=v1.10.1 -b --skip-tags=download,bootstrap-os cluster.yml
 ```
 
