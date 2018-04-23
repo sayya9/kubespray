@@ -1,8 +1,6 @@
 # How to use in our environment?
 
-### Prepare
-
-**Install python-netaddr**
+### Setup ansible controller env
 
 ```
 git clone https://github.com/drkjam/netaddr.git
