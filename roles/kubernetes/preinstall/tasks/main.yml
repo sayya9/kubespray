@@ -184,7 +184,7 @@
   delay: "{{ retry_stagger | random + 3 }}"
   when:
     - ansible_distribution == "Fedora"
-    - ansible_distribution_major_version > 21
+    - ansible_distribution_major_version|int > 21
     - not is_atomic
   changed_when: False
   tags:
@@ -242,12 +242,6 @@
   when:
     - disable_ipv6_dns
     - not ansible_os_family in ["CoreOS", "Container Linux by CoreOS"]
-  tags:
-    - bootstrap-os
-
-- name: set default sysctl file path
-  set_fact:
-    sysctl_file_path: "/etc/sysctl.d/99-sysctl.conf"
   tags:
     - bootstrap-os
 
