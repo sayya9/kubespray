@@ -6,9 +6,28 @@
 git clone https://github.com/drkjam/netaddr.git
 cd netaddr
 python setup.py install
-python3 setup.py install
 pip install -U Jinja2
-pip3 install -U Jinja2
+pip install -r requirements.txt
+```
+
+### Setup remote server env(CentOS)
+
+#### Upgrade kernel
+
+```
+rpm -Uvh http://www.elrepo.org/elrepo-release-7.0-3.el7.elrepo.noarch.rpm
+rpm --import https://www.elrepo.org/RPM-GPG-KEY-elrepo.org
+yum -y --enablerepo=elrepo-kernel install kernel-ml
+```
+
+#### Install Packages
+
+```
+git
+ansible
+python-pip
+python-netaddr
+python-docker-py
 ```
 
 ### Clone this repo

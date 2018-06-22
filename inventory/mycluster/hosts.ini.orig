@@ -1,0 +1,19 @@
+[all]
+tp-master01 ansible_host=192.168.2.3 ip=192.168.2.3
+tp-node01 ansible_host=192.168.2.4 ip=192.168.2.4
+tp-node02 ansible_host=192.168.2.5 ip=192.168.2.5
+
+[kube-master]
+tp-master01 	 
+
+[kube-node]
+tp-master01 	 
+tp-node01
+tp-node02
+
+[etcd]
+tp-master01 	 
+
+[k8s-cluster:children]
+kube-node 	 
+kube-master 	 
